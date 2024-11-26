@@ -1,0 +1,10 @@
+pipeline{
+    agent: any
+    stages{
+        stage("build"){
+            steps{
+                sh "docker build -t skyer1232/django_build:latest -t skyer1232/django_build:123"
+            }
+        }
+    }
+}
