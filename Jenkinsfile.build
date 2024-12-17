@@ -27,7 +27,7 @@ pipeline {
         stage("push"){
             steps{
                 withCredentials(
-                    [usernamePassword(usernameVariable: 'LOGIN', passwordVariable: 'PASSWORD', credetialsId: 'skyer_push')]
+                    [usernamePassword(usernameVariable: 'LOGIN', passwordVariable: 'PASSWORD', credentialsId: 'skyer_push')]
                     )
                     {
                         sh 'docker login -u {LOGIN} p ${PASSWORD}'
