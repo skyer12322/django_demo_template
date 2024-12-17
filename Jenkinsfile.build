@@ -24,5 +24,17 @@ pipeline {
                     ]
             }
         }
+        stage("push"){
+            steps{
+                withCredentials(
+                    [usernamePassword(usernameVariable: 'LOGIN', passwordVariable: 'PASSWORD', credetialsID: 'skyer_push')]
+                    )
+                    {
+                        sh 'docker login -u {LOGIN} p ${PASSWORD}'
+                        sh 'docker push ${IMAGE_NAME}:latest'
+                        sh 'docker push ${IMAGE_NAME}:${GIT_COMMIT}'
+                    }
+            }
+        }
     }
 }
