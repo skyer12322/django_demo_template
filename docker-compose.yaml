@@ -1,0 +1,7 @@
+version: "3"
+
+serveices:
+  backend:
+    image: skyer1232/django_demo
+    ports:
+      - "8081:80"
