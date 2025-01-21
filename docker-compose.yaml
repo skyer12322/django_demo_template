@@ -4,4 +4,4 @@ services:
   backend:
     image: skyer1232/django_demo
     ports:
-      - "8081:80"
+      - "8097:8000"
